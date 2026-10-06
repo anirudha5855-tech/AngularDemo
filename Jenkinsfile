@@ -28,7 +28,7 @@ pipeline {
         stage("Diploy") {
             steps {
                 bat "del /q /s c:\\inetpub\\wwwroot\\angularapp\\*"
-                bat "xcopy /E /Y /I dist\FirstAngularProj\browser\\* c:\\inetpub\\wwwroot\\angularapp\\"
+                bat "xcopy /E /Y /I dist\\FirstAngularProj\\browser\\* c:\\inetpub\\wwwroot\\angularapp\\"
             }
         }
     }
