@@ -25,6 +25,12 @@ pipeline {
                bat "npx ng build --configuration production"     
             }
         }
+        stage("Diploy") {
+            steps {
+                bat "del /q /s c:\\inetpub\\wwwroot\\angularapp\\*"
+                bat "xcopy /E /Y /I dist\\* c:\\inetpub\\wwwroot\\angularapp\\"
+            }
+        }
     }
     post {
         success {
